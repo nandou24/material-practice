@@ -1,0 +1,18 @@
+mat-form-field {
+    width: 100%;
+}
+
+.input-pequeno {
+    height: 100%;
+    //padding: 2px 6px;
+    font-size: 12px;
+}
+
+mat-card-title {
+    background-color: #0f3369;  // Azul Bootstrap
+    color: white;
+    padding: 10px;
+    font-weight: lighter;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}

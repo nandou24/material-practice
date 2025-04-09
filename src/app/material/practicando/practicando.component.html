@@ -1,0 +1,121 @@
+
+    <div class="row mt-2">
+        <div class="col-12 col-xxl-7">
+            <mat-card class="card-datos">
+                <form [formGroup]="pacienteForm">
+
+                <mat-card-title>
+
+                    <div class="row align-items-center">
+                        <div class="col-lg-5">
+                            DATOS PERSONALES
+                        </div>
+    
+                        <div class="col-lg-1">
+                            <mat-label>HC</mat-label>
+                        </div>
+
+                        <div class="col-lg-2">
+                            <input class="form-input" formControlName="hc" >                            
+                        </div>
+
+                    </div>
+                    
+                </mat-card-title>
+                
+                <mat-card-content>
+                            
+                    <div class="row mt-2">
+            
+                        <div class="col-lg-2">
+                            <mat-form-field>
+                                <mat-label>Tipo Documento</mat-label>
+                                <mat-select formControlName="tipoDoc">
+                                <mat-option value="0">DNI</mat-option>
+                                <mat-option value="1">CE</mat-option>
+                                <mat-option value="2">Pasaporte</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                                
+                        <div class="col-lg-2">
+                            <mat-form-field appearance="fill" class="input-pequeno">
+                                <mat-label style="font-size: 14px;">Nro. Documento</mat-label>
+                                <input matInput formControlName="nroDoc">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <mat-form-field>
+                            <mat-label>Fecha Nacimiento</mat-label>
+                            <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+            
+                        <div class="col-lg-2">
+                            <mat-form-field>
+                            <mat-label>Edad</mat-label>
+                            <input matInput formControlName="edad" [disabled]="true">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-lg-2">
+                            <mat-form-field>
+                            <mat-label>Sexo</mat-label>
+                            <mat-select formControlName="sexo">
+                                <mat-option value="M">Masculino</mat-option>
+                                <mat-option value="F">Femenino</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+    
+                    </div>
+                            
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <mat-form-field>
+                            <mat-label>Apellido Paterno</mat-label>
+                            <input matInput formControlName="apellidoPaterno">
+                            </mat-form-field>
+                        </div>
+    
+                        <div class="col-lg-4">
+                            <mat-form-field>
+                                <mat-label>Apellido Materno</mat-label>
+                                <input matInput formControlName="apellidoMaterno">
+                            </mat-form-field>
+                        </div>
+    
+                        <div class="col-lg-4">
+                            <mat-form-field>
+                            <mat-label>Nombres</mat-label>
+                            <input matInput formControlName="nombres">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                </mat-card-content>
+                </form>
+            </mat-card>
+        </div>
+        
+        <div class="col-12 col-xxl-5">
+            <mat-card class="card-datos">
+        
+                <mat-card-title>
+                    BUSCAR PACIENTES
+                </mat-card-title>
+                
+                <mat-card-content>
+                    <div class="col-12 col-xxl-4">
+                        hola
+                    </div>
+                </mat-card-content>
+            
+            </mat-card> 
+        </div>
+        
+    </div>
+
