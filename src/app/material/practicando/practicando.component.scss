@@ -1,11 +1,7 @@
+
+
 mat-form-field {
     width: 100%;
-}
-
-.input-pequeno {
-    height: 100%;
-    //padding: 2px 6px;
-    font-size: 12px;
 }
 
 mat-card-title {
@@ -13,6 +9,39 @@ mat-card-title {
     color: white;
     padding: 1px;
     font-weight: lighter;
+    font-size: 18px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 }
+
+// mat-label {
+//     font-size: 13px;
+//     color: #0f3369;  // Azul Bootstrap
+// }
+
+mat-option {
+    font-size: 13px;
+    //color: #0f3369;  // Azul Bootstrap
+}
+
+.mat-mdc-header-row{
+    background-color: #0f3369;
+    color: #ffffff;
+}
+
+// .mat-mdc-row{
+//     height: 35px;
+// }
+
+// .mat-mdc-card-content {
+//     //background-color: #ffffff;
+//     padding: 5px;
+// }
+
+.mat-mdc-card-content:last-child{
+    padding-bottom: 0%;
+}
+
+
+
+

@@ -1,12 +1,16 @@
 
     <div class="row mt-2">
-        <div class="col-12 col-xxl-7">
-            <mat-card class="card-datos">
-                <form [formGroup]="pacienteForm">
+        <div class="col-12 col-xxl-7 mb-2">
+            <form [formGroup]="pacienteForm">
+            <mat-card>
 
                 <mat-card-title>
 
                     <div class="row align-items-center">
+                        <div class="col-auto">
+                          <mat-icon class="me-1">assignment_ind</mat-icon>  
+                        </div>
+                        
                         <div class="col-lg-5 col-auto">
                             DATOS PERSONALES
                         </div>
@@ -27,46 +31,46 @@
                     <div class="row mt-2">
             
                         <div class="col-lg-2">
-                            <mat-form-field>
+                            <mat-form-field appearance="outline">
                                 <mat-label>Tipo Documento</mat-label>
-                                <mat-select formControlName="tipoDoc">
-                                <mat-option value="0">DNI</mat-option>
-                                <mat-option value="1">CE</mat-option>
-                                <mat-option value="2">Pasaporte</mat-option>
-                                </mat-select>
+                                    <mat-select formControlName="tipoDoc">
+                                        <mat-option value="DNI">DNI</mat-option>
+                                        <mat-option value="CE">CE</mat-option>
+                                        <mat-option value="PASAPORTE">Pasaporte</mat-option>
+                                    </mat-select>
                             </mat-form-field>
-                        </div>
+                        </div>                          
                                 
                         <div class="col-lg-2">
-                            <mat-form-field appearance="fill" class="input-pequeno">
-                                <mat-label style="font-size: 14px;">Nro. Documento</mat-label>
+                            <mat-form-field appearance="outline">
+                                <mat-label >Nro. Documento</mat-label>
                                 <input matInput formControlName="nroDoc">
                             </mat-form-field>
                         </div>
 
                         <div class="col-lg-3">
-                            <mat-form-field>
-                            <mat-label>Fecha Nacimiento</mat-label>
-                            <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento">
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Fecha Nacim - mm/dd/yyyy</mat-label>
+                                    <input matInput [matDatepicker]="picker" readonly="true" formControlName="fechaNacimiento">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker disabled="false"></mat-datepicker>
                             </mat-form-field>
                         </div>
             
                         <div class="col-lg-2">
-                            <mat-form-field>
-                            <mat-label>Edad</mat-label>
-                            <input matInput formControlName="edad" [disabled]="true">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Edad</mat-label>
+                                <input matInput formControlName="edad">
                             </mat-form-field>
                         </div>
 
                         <div class="col-lg-2">
-                            <mat-form-field>
-                            <mat-label>Sexo</mat-label>
-                            <mat-select formControlName="sexo">
-                                <mat-option value="M">Masculino</mat-option>
-                                <mat-option value="F">Femenino</mat-option>
-                            </mat-select>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Sexo</mat-label>
+                                <mat-select formControlName="sexo">
+                                    <mat-option value="M">Masculino</mat-option>
+                                    <mat-option value="F">Femenino</mat-option>
+                                </mat-select>
                             </mat-form-field>
                         </div>
     
@@ -74,37 +78,258 @@
                             
                     <div class="row">
                         <div class="col-lg-4">
-                            <mat-form-field>
-                            <mat-label>Apellido Paterno</mat-label>
-                            <input matInput formControlName="apellidoPaterno">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Apellido Paterno</mat-label>
+                                <input matInput formControlName="apellidoPaterno">
                             </mat-form-field>
                         </div>
     
                         <div class="col-lg-4">
-                            <mat-form-field>
+                            <mat-form-field appearance="outline">
                                 <mat-label>Apellido Materno</mat-label>
                                 <input matInput formControlName="apellidoMaterno">
                             </mat-form-field>
                         </div>
     
                         <div class="col-lg-4">
-                            <mat-form-field>
-                            <mat-label>Nombres</mat-label>
-                            <input matInput formControlName="nombres">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Nombres</mat-label>
+                                <input matInput formControlName="nombres">
                             </mat-form-field>
                         </div>
                     </div>
 
                 </mat-card-content>
-                </form>
+                
             </mat-card>
+
+            <mat-card class="mt-2">
+                <mat-card-title>
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 col-auto">
+                            DATOS DE CONTACTO
+                        </div>
+                    </div>
+                </mat-card-title>
+                
+                <mat-card-content>
+                            
+                    <div class="row mt-2">
+            
+                        <div class="col-lg-4">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Departamento</mat-label>
+                                    <mat-select formControlName="departamentoCliente">
+                                        <mat-option value="0">LIMA</mat-option>
+                                        <mat-option value="1">ICA</mat-option>
+                                        <mat-option value="2">PIURA</mat-option>
+                                    </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Provincia</mat-label>
+                                    <mat-select formControlName="provinciaCliente">
+                                        <mat-option value="0">Lima</mat-option>
+                                        <mat-option value="1">Cañete</mat-option>
+                                        <mat-option value="2">Mala</mat-option>
+                                    </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Distrito</mat-label>
+                                    <mat-select formControlName="distritoCliente">
+                                        <mat-option value="0">Independencia</mat-option>
+                                        <mat-option value="1">Comas</mat-option>
+                                        <mat-option value="2">Magdalena</mat-option>
+                                    </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-8">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Dirección</mat-label>
+                                <input matInput formControlName="direcCliente">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <mat-form-field appearance="outline">
+                                <mat-label>e-mail</mat-label>
+                                <input matInput formControlName="mailCliente">
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-2 align-items-center">
+            
+                        <div class="col-lg-4">
+                            <mat-form-field appearance="outline" class="w-100">
+                              <mat-label>Número de teléfono</mat-label>
+                              <input matInput [formControl]="nuevoNumero">
+                              <mat-error *ngIf="nuevoNumero.hasError('required') && nuevoNumero.touched">
+                                Número requerido
+                              </mat-error>
+                            </mat-form-field>
+                          </div>
+                        
+                          <div class="col-lg-4">
+                            <mat-form-field appearance="outline" class="w-100">
+                              <mat-label>Descripción</mat-label>
+                              <input matInput [formControl]="nuevaDescripcion" placeholder="Ej: Personal">
+                              <mat-error *ngIf="nuevaDescripcion.hasError('required') && nuevaDescripcion.touched">
+                                Descripción requerida
+                              </mat-error>
+                            </mat-form-field>
+                          </div>
+                        
+                          <div class="col-lg-4">
+                            <!-- <button mat-raised-button color="primary" (click)="agregarTelefonoDesdeInput()">
+                              Agregar Teléfono
+                            </button> -->
+                            <button mat-flat-button color="primary" (click)="agregarTelefono()">
+                                <mat-icon class="me-1">add</mat-icon>
+                                Agregar Teléfono
+                              </button>
+                          </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <!--
+                        <div class="table-responsive mt-3">
+                            <table class="table table-sm">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">N°</th>
+                                    <th scope="col">Número</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Opciones</th>
+                                  </tr>
+                                </thead>
+                  
+                                <tbody formArrayName="phones">
+                                  <tr *ngFor="let item of phones.controls; let i = index" [formGroupName]="i">
+                                    <td><span>{{i+1}}</span></td>
+                                    <td><span>{{item.get('numero')?.value}}</span></td>
+                                    <td><span>{{item.get('descripcion')?.value}}</span></td>
+                                    <td><button class="btn btn-danger btn-sm" type="button" (click)="eliminarTelefono(i)">Eliminar</button></td>
+                                  </tr>
+                                </tbody>
+                                
+                              </table>
+                          </div>-->
+
+                        <!--
+                        <table mat-table #table [dataSource]="dataSource" class="mat-elevation-z2 w-100" formArrayName="phones">
+
+                            <ng-container matColumnDef="numero">
+                              <th mat-header-cell *matHeaderCellDef> Número </th>
+                              <td mat-cell *matCellDef="let row; let i = index" [formGroupName]="i">
+                                <mat-form-field appearance="outline" class="w-100">
+                                  <input matInput formControlName="numero" placeholder="Ej: 987654321">
+                                </mat-form-field>
+                              </td>
+                            </ng-container>
+                    
+
+                            <ng-container matColumnDef="descripcion">
+                              <th mat-header-cell *matHeaderCellDef> Descripción </th>
+                              <td mat-cell *matCellDef="let row; let i = index" [formGroupName]="i">
+                                <mat-form-field class="w-100">
+                                  <input matInput formControlName="descripcion" placeholder="Ej: Personal">
+                                </mat-form-field>
+                              </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="acciones">
+                              <th mat-header-cell *matHeaderCellDef> Opciones </th>
+                              <td mat-cell *matCellDef="let row; let i = index">
+                                <button mat-icon-button color="warn" (click)="eliminarTelefono(i)">
+                                  <mat-icon>delete</mat-icon>
+                                </button>
+                              </td>
+                            </ng-container>
+                    
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    
+                        </table>
+                        -->
+
+                        <div class="col-lg-12">
+                            <table mat-table [dataSource]="dataSource" class="mt-2 mb-2" formArrayName="phones">
+
+                            <!-- Número -->
+                            <ng-container matColumnDef="numero">
+                              <th mat-header-cell *matHeaderCellDef> Número </th>
+                              <td mat-cell *matCellDef="let row; let i = index" [formGroupName]="i">
+                                {{ row.get('numero')?.value }}
+                              </td>
+                            </ng-container>
+                          
+                            <!-- Descripción -->
+                            <ng-container matColumnDef="descripcion">
+                              <th mat-header-cell *matHeaderCellDef> Descripción </th>
+                              <td mat-cell *matCellDef="let row; let i = index" [formGroupName]="i">
+                                {{ row.get('descripcion')?.value }}
+                              </td>
+                            </ng-container>
+                          
+                            <!-- Acciones -->
+                            <ng-container matColumnDef="acciones">
+                              <th mat-header-cell *matHeaderCellDef> Opciones </th>
+                              <td mat-cell *matCellDef="let row; let i = index" [formGroupName]="i">
+                                {{ row.get('descripcion')?.value }}
+                              </td>
+                            </ng-container>
+                          
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                          </table>
+
+                        </div>
+                          
+
+                    </div>
+
+
+
+                </mat-card-content>
+
+            </mat-card>
+            </form>
         </div>
         
         <div class="col-12 col-xxl-5">
-            <mat-card class="card-datos">
+
+            <mat-card>
         
                 <mat-card-title>
-                    BUSCAR PACIENTES
+
+                    <div class="row align-items-center">
+                        
+                        <div class="col-lg-5 col-auto" style="margin-left: 12px;">
+                            BUSCAR PACIENTES
+                        </div>
+    
+                        <div class="col-lg-5 col-auto">
+                            <input type="input" class="form-control form-control-sm mt-1 mb-1" id="buscarPaciente"
+                            placeholder="Ingrese nombre" [(ngModel)]="terminoBusqueda">
+                        </div>
+
+                    </div>
+
                 </mat-card-title>
                 
                 <mat-card-content>
@@ -114,6 +339,7 @@
                 </mat-card-content>
             
             </mat-card> 
+
         </div>
         
     </div>
